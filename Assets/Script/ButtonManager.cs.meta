@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: ad3e68a1e7b3dfb4a90e66dfc0f54f61
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _blackFadeImage: {fileID: 2279207858749222334, guid: 1e812feccd7caeb4db7a11dd64288c1a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
