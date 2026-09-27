@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     float v;
     public float rote;
 
+    InputAction _moveAction;
+    InputAction _jumpAction;
+
     /// <summary>
     /// [外部変更用]ジャンプ力上昇のレート。倍率で設定する。
     /// </summary>
@@ -38,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public static float highSpeed = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Awake()
+    {
+        _moveAction = InputSystem.actions.FindAction("Move");
+        _jumpAction = InputSystem.actions.FindAction("Jump");
+    }
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -58,7 +67,8 @@ public class PlayerMovement : MonoBehaviour
         _moveSpeed = 6f;
 
         _rb.gravityScale = 3;
-        h = InputSystem.;
+        h = _moveAction.ReadValue<Vector2>().x;
+        Debug.Log(h);
         if (h > 0)
         {
             rote = 0;
@@ -69,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
         }
         float velocity = _rb.linearVelocity.y;   // この変数 velocity に速度を計算して、最後に Rigidbody2D.velocity に戻す
 
-        v = Input.GetAxisRaw("Vertical");
+        v = _jumpAction.ReadValue<float>();
+        Debug.Log(v);
         if (v > 0 && _isGrounded)
         {
             velocity = _jumpSpeed;
@@ -89,5 +100,21 @@ public class PlayerMovement : MonoBehaviour
         _rb.linearVelocity = new Vector2(h * _moveSpeed, velocity);
         Debug.Log(_rb.linearVelocity);
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground" && !_isGrounded)
+        {
+            _isGrounded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground" && _isGrounded)
+        {
+            _isGrounded = false;
+        }
     }
 }
