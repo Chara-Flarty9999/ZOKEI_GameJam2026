@@ -28,6 +28,7 @@ public class MessageSequencer : MonoBehaviour
 
     private void Start()
     {
+        var path = $"Assets/Resources/MessageSequence/{_sequence.name}.asset";
         _cts = new CancellationTokenSource();
         
         MoveNext();
