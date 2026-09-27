@@ -16,7 +16,9 @@ public class MessageData
     public string text;
 
     [Tooltip("ˆê•bŠÔ‚Å‰½•¶š•\¦‚³‚¹‚é‚©‚Ìİ’è")]
-    public float speed = 1.0f;
+    public float speed;
+
+    [Tooltip("")]
 
     public Sprite characterImage;
 }
