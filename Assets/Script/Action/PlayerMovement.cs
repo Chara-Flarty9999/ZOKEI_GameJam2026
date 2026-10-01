@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _gravityDrag = .2f;
     /// <summary>プレイヤー指定</summary>
     [SerializeField] GameObject _player;
-    Rigidbody2D _rb = default;
-    SpriteRenderer _sprite = default;
+    [SerializeField] Rigidbody2D _rb = default;
+    [SerializeField] SpriteRenderer _sprite = default;
     /// <summary>接地フラグ</summary>
     [SerializeField] bool _isGrounded = false;
     Vector3 _initialPosition = default;
     AudioSource _audioSource;
-    Animator _anim = default;
+    [SerializeField] Animator _anim = default;
 
     float h;
     float v;
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        InputSystem.actions.Enable();
         _moveAction = InputSystem.actions.FindAction("Move");
         _jumpAction = InputSystem.actions.FindAction("Jump");
     }
@@ -72,11 +73,11 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(h);
         if (h > 0)
         {
-            rote = 0;
+            _sprite.flipX = false;
         }
         else if (h < 0)
         {
-            rote = 180;
+            _sprite.flipX = true;
         }
         float velocity = _rb.linearVelocity.y;   // この変数 velocity に速度を計算して、最後に Rigidbody2D.velocity に戻す
 
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(v);
         if (v > 0 && _isGrounded)
         {
+            _anim.SetBool("Jumping?", true);
             velocity = _jumpSpeed;
             _isGrounded = false;
         }
@@ -95,10 +97,24 @@ public class PlayerMovement : MonoBehaviour
 
         if (velocity < -1)
         {
+            _anim.SetBool("Jumping?", false);
+            _anim.SetBool("Falling?", true);
             _rb.gravityScale = levitation;
         }
 
         _rb.linearVelocity = new Vector2(h * _moveSpeed, velocity);
+        if (h != 0)
+        {
+            _anim.SetBool("Moving?", true);
+        }
+        else
+        {
+            _anim.SetBool("Moving?", false);
+        }
+        if (velocity == 0)
+        {
+            _anim.SetBool("Falling?", false);
+        }
         Debug.Log(_rb.linearVelocity);
 
     }
@@ -107,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.tag == "Ground" && !_isGrounded)
         {
+            _anim.SetBool("Falling?", false);
             _isGrounded = true;
         }
     }
