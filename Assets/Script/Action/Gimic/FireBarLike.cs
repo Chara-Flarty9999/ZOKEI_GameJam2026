@@ -18,12 +18,4 @@ public class FireBarLike : MonoBehaviour
             transform.Rotate(0, 0, 2f);
         await Awaitable.WaitForSecondsAsync(0.01f);
     }
-
-    async void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            //await collision.GetComponent<PlayerMovement>().Die();
-        }
-    }
 }
