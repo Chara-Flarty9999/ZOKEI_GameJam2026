@@ -29,6 +29,7 @@ public class MessageWait : MonoBehaviour
             _waiting = true;
             for (float alpha = 0; alpha < 1; alpha += 0.01f)
             {
+                if (_image == null) break;
                 _image.color = new Color(1, 1, 1, alpha);
                 await Task.Delay(5);
                 if (_messagePrinter.IsPrinting)
@@ -39,6 +40,7 @@ public class MessageWait : MonoBehaviour
             }
             for (float alpha = 1; alpha > 0; alpha -= 0.01f)
             {
+                if (_image == null) break;
                 _image.color = new Color(1, 1, 1, alpha);
                 await Task.Delay(5);
                 if (_messagePrinter.IsPrinting)
@@ -49,5 +51,10 @@ public class MessageWait : MonoBehaviour
             }
             _waiting = false;
         }
+    }
+
+    void OnDestroy()
+    {
+        MessageSequencer._cts.Cancel();
     }
 }
