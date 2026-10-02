@@ -1,0 +1,258 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf810a9463ca224a8c2cb1c07280411, type: 3}
+  m_Name: 1-Continue
+  m_EditorClassIdentifier: 
+  messages:
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u2026\u2026\u3054\u3081\u3093\u300D"
+    speed: 20
+    characterImage: {fileID: -8315643908149669215, guid: 355e2d6851945fe40948b60c7cb817bb, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u305D\u306E\u8A00\u8449\u3092\u805E\u3044\u305F\u77AC\u9593\u3002\r\n\u5F7C\u5973\u306E\u8868\u60C5\u304C\u56FA\u307E\u3063\u305F\u3002\r\n"
+    speed: 20
+    characterImage: {fileID: -8315643908149669215, guid: 355e2d6851945fe40948b60c7cb817bb, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u305D\u306E\u8A00\u8449\u3092\u805E\u3044\u305F\u77AC\u9593\u3002\r\n\u5F7C\u5973\u306E\u8868\u60C5\u304C\u56FA\u307E\u3063\u305F\u3002\r\n"
+    speed: 20
+    characterImage: {fileID: -8315643908149669215, guid: 355e2d6851945fe40948b60c7cb817bb, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30A2\u30B0\u30E9\u30C3\u30C8\u30FB\u30C6\u30A4\u30E9\u30FC"
+    messageType: 1
+    text: "\u300C\u2026\u2026\u3048\uFF1F\u300D\r\n"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: -5411879116573249822, guid: 2e26dcb4d3c034749bafc5abd9a68ec0, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30A2\u30B0\u30E9\u30C3\u30C8\u30FB\u30C6\u30A4\u30E9\u30FC"
+    messageType: 1
+    text: "\u300C\u3069\u3046\u3057\u3066\uFF1F\u300D"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: -5411879116573249822, guid: 2e26dcb4d3c034749bafc5abd9a68ec0, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u5C11\u3057\u305A\u3064\u3001\u305D\u306E\u76EE\u306B\u6D99\u304C\u6D6E\u304B\u3093\u3067\u3044\u304F"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: -5411879116573249822, guid: 2e26dcb4d3c034749bafc5abd9a68ec0, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30A2\u30B0\u30E9\u30C3\u30C8\u30FB\u30C6\u30A4\u30E9\u30FC"
+    messageType: 1
+    text: "\u300C\u79C1\u306E\u3069\u3053\u304C\u30C0\u30E1\u306A\u306E\u300D"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: 1535185661060465657, guid: c497b7a1fa5d84646afe8f6f54cee389, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u3044\u3084\u3001\u305D\u306E\u2026\u2026\u300D"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 1535185661060465657, guid: c497b7a1fa5d84646afe8f6f54cee389, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30A2\u30B0\u30E9\u30C3\u30C8\u30FB\u30C6\u30A4\u30E9\u30FC"
+    messageType: 1
+    text: "\u300C\u3082\u3046\u77E5\u3089\u306A\u3044\uFF01\u300D"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 1535185661060465657, guid: c497b7a1fa5d84646afe8f6f54cee389, type: 3}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u2026\u2026\u2026\u2026\n\u2026\u2026\u306A\u3093\u3060\u3063\u305F\u3093\u3060\u3002"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u305D\u3046\u601D\u3063\u305F\u2015\u2015\u6B21\u306E\u77AC\u9593\u3002\n\u5468\u56F2\u306E\u7A7A\u6C17\u304C\u5909\u308F\u3063\u305F\u3002"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B541"
+    messageType: 1
+    text: "\u300C\u306D\u3047\u5F7C\u5973\u3001\u884C\u3063\u305F\u308F\u3088\u306D\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B54\uFF12"
+    messageType: 1
+    text: "\u300C\u3046\u3093\u3001\u3082\u3046\u898B\u3048\u306A\u3044\u308F\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B541"
+    messageType: 1
+    text: "\u300C\u5F7C\u5973\u304C\u8AE6\u3081\u3063\u305F\u3063\u3066\u3053\u3068\u306F\u3082\u3046\u3001\u9060\u616E\u3057\u306A\u304F\u3066\u3044\u3044\u306E\u3088\u306D\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B54\uFF12"
+    messageType: 1
+    text: "\u300C\u3061\u3087\u3063\u3068\u3001\u629C\u3051\u99C6\u3051\u306F\u3084\u3081\u3066\u3088\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B54\uFF11"
+    messageType: 1
+    text: "\u300C\u30A2\u30B0\u30E9\u30C3\u30C8\u30FB\u30C6\u30A4\u30E9\u30FC\u306F\u79C1\u305F\u3061\u4E00\u5E74\u306E\u4E2D\u3067\u3082\n\u30C8\u30C3\u30D7\u306E\u5B9F\u529B\u3088\u3002\n\u3060\u304B\u3089\u5148\u3092\u8B72\u3063\u3066\u3042\u3052\u305F\u306E\u3001\u3067\u3082\u5F7C\u5973\u306F\u632F\u3089\u308C\u305F\u3002\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u30E2\u30D6\u60AA\u9B54\uFF11"
+    messageType: 1
+    text: "\u300C\u3042\u3068\u306F\u65E9\u3044\u8005\u52DD\u3061\u3067\u3057\u3087\uFF1F\u300D"
+    speed: 20
+    characterImage: {fileID: 0}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 8010810954670547221, guid: e54de53b0592c6e489d907a0776a0c4f, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u2026\u2026\u3093\uFF1F\u300D"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u305D\u308C\u307E\u3067\u9060\u5DFB\u304D\u306B\u3053\u3061\u3089\u3092\u898B\u3066\u3044\u305F\u60AA\u9B54\u305F\u3061\u304C\u3001\n\u4E00\u6589\u306B\u52D5\u304D\u51FA\u3059\u3002"
+    speed: 20
+    characterImage: {fileID: 8325578993728192915, guid: b985b4481e847e7449f42c90a3b70b99, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u2026\u2026\u3048\uFF1F"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u4E00\u4EBA\u3001\u4E8C\u4EBA\u3058\u3083\u306A\u3044\u3002\n\u4F55\u4EBA\u3082\u306E\u60AA\u9B54\u304C\u3053\u3061\u3089\u3078\u5411\u304B\u3063\u3066\u304F\u308B\u3002"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u3061\u3087\u3001\u3061\u3087\u3063\u3068\u5F85\u3066\uFF01\uFF1F\u300D"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u60AA\u9B54\u305F\u3061\u306F\u4E00\u6589\u306B\u3053\u3061\u3089\u3078\u8972\u3044\u304B\u304B\u3063\u3066\u304D\u305F\u3002"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u306A\u3093\u3060\u306A\u3093\u3060\uFF01\uFF1F\u300D"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 1
+    text: "\u4E8B\u60C5\u304C\u5206\u304B\u3089\u306A\u3044\u3002\n\u5206\u304B\u3089\u306A\u3044\u304C\u2015\u2015\u3002\n\u4ECA\u306F\u8003\u3048\u3066\u3044\u308B\u6687\u306A\u3093\u3066\u306A\u3044\u3002"
+    speed: 20
+    characterImage: {fileID: 6252100316752967121, guid: e1dc49adb98c5cd4081a676ea0174ec1, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: "\u4E0A\u91CE\u754C\u4EBA"
+    messageType: 1
+    text: "\u300C\u3046\u308F\u3042\u3042\u3042\u3042\u3042\u3063\uFF01\u300D"
+    speed: 20
+    characterImage: {fileID: -324606857161010116, guid: 398c19d8b13e7594aab8f9c38fd9cec2, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 
+  - caption: 
+    messageType: 4
+    text: 
+    speed: 20
+    characterImage: {fileID: -324606857161010116, guid: 398c19d8b13e7594aab8f9c38fd9cec2, type: 3}
+    secondCharacterImage: {fileID: 0}
+    backgroundImage: {fileID: 0}
+    choices: []
+    sceneName: 1-1
