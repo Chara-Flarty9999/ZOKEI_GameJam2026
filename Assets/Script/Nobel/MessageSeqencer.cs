@@ -18,11 +18,15 @@ public class MessageSequencer : MonoBehaviour
 
     [SerializeField]
     private Actor _actor = default;
+    [SerializeField]
+    private SecondActor _secondActor = default;
 
     [SerializeField]
     private TextMeshProUGUI _textUi = default;
 
     [SerializeField] private MessageSequenceData _sequence;
+
+    [SerializeField] Image _bg = default;
     public MessageSequenceData Sequence 
     { 
         get { return _sequence; } 
@@ -54,6 +58,7 @@ public class MessageSequencer : MonoBehaviour
     async void Start()
     {
         _actor.Image.color = new Color(1f, 1f, 1f, 0f);
+        _secondActor.Image.color = new Color(1f, 1f, 1f, 0f);
         _cts = new CancellationTokenSource();
         // 保存しておく（RectTransform が必要）
         if (_choicesParent != null)
@@ -67,9 +72,10 @@ public class MessageSequencer : MonoBehaviour
 
     private async void Update()
     {
+        if (_currentIndex == -1) return;
+
         // 選択肢表示中はクリックで進めない（UI ボタンで選択させる）
         if (_awaitingChoice) return;
-
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (_printer.IsPrinting) { _printer.Skip(); }
@@ -82,6 +88,10 @@ public class MessageSequencer : MonoBehaviour
             if (_currentIndex >= 0 && _sequence != null && _currentIndex < _sequence.messages.Length)
             {
                 var current = _sequence.messages[_currentIndex];
+                if (current.messageType == Enums.MessageType.Image)
+                {
+                    _bg.sprite = current.backgroundImage;
+                }
                 if (current.messageType == Enums.MessageType.SceneChange) 
                 {
                     // シーン遷移の場合は、シーン遷移処理を呼び出す
@@ -136,6 +146,10 @@ public class MessageSequencer : MonoBehaviour
             var current = _sequence.messages[_currentIndex];
             _textUi.text = current.caption;
             _printer.Speed = current.speed;
+            if (current.messageType == Enums.MessageType.Image)
+            {
+                _bg.sprite = current.backgroundImage;
+            }
             if (current.characterImage != null) 
             {
                 _actor.Image.sprite = current.characterImage;
@@ -146,7 +160,17 @@ public class MessageSequencer : MonoBehaviour
                 _actor.Image.color = new Color(1f, 1f, 1f, 0f); // 透明にする
                 _actor.Image.sprite = null;
             }
-                _printer.ShowMessage(current.text);
+            if (current.secondCharacterImage != null)
+            {
+                _secondActor.Image.sprite = current.secondCharacterImage;
+                _secondActor.Image.color = new Color(1f, 1f, 1f, 1f); // 不透明にする
+            }
+            else
+            {
+                _secondActor.Image.color = new Color(1f, 1f, 1f, 0f); // 透明にする
+                _secondActor.Image.sprite = null;
+            }
+            _printer.ShowMessage(current.text);
                 // If message type is choice, we'll wait for printing to finish and then show choices in Update
                 if (current.messageType == Enums.MessageType.Choice)
                 {

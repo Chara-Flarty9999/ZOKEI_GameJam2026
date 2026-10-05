@@ -25,6 +25,9 @@ public class MessageData
 
     public Sprite characterImage;
 
+    [Tooltip("‘æ“ñƒLƒƒƒ‰ƒNƒ^[—§‚¿ŠG‰æ‘œ")]
+    public Sprite secondCharacterImage;
+
     [Tooltip("”wŒiB‚à‚µİ’è‚³‚ê‚Ä‚¢‚éê‡”wŒi‚ª•Ï‰»‚µ‚Ä‚©‚ç•¶Í‚ªˆ—‚³‚ê‚éB")]
     public Sprite backgroundImage;
 
