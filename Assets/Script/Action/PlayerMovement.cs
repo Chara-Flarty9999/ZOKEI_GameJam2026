@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
 
         _rb.gravityScale = 3;
         h = _moveAction.ReadValue<Vector2>().x;
-        Debug.Log(h);
         if (h > 0)
         {
             _sprite.flipX = false;
@@ -82,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         float velocity = _rb.linearVelocity.y;   // ‚±‚Ì•Ï” velocity ‚É‘¬“x‚ğŒvZ‚µ‚ÄAÅŒã‚É Rigidbody2D.velocity ‚É–ß‚·
 
         v = _jumpAction.ReadValue<float>();
-        Debug.Log(v);
         if (v > 0 && _isGrounded)
         {
             _anim.SetBool("Jumping?", true);
@@ -115,8 +113,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetBool("Falling?", false);
         }
-        Debug.Log(_rb.linearVelocity);
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
