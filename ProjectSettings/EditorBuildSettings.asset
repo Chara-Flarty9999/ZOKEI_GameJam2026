@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoEndPart.unity
     guid: 0a97c136541d8aa44a830e116d39197a
+  - enabled: 1
+    path: Assets/Scenes/PrologueNovel.unity
+    guid: 5edacc89778d9724cb5fafd557f3b137
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
