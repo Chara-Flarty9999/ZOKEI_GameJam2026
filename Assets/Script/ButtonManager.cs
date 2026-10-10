@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     Image _image;
-    [SerializeField]GameObject _blackFadeImage;
+    [SerializeField] GameObject _blackFadeImage;
+    [SerializeField] AudioSource _audioSource;
     static string _beforeGameOverSceneName;
     public string BeforeGameOverSceneName
     {
@@ -33,7 +34,7 @@ public class ButtonManager : MonoBehaviour
     public async void StartGame()
     {
         await FadeOut(3);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("NovelPart");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("PrologueNovel");
     }
     public async void Restart()
     {
@@ -43,7 +44,9 @@ public class ButtonManager : MonoBehaviour
 
     public async void SceneChange(string SceneName)
     {
+        Debug.Log($"Changing scene to: {SceneName}");
         await FadeOut(1);
+        Debug.Log("ÉVÅ[ÉìÇé¿ç€Ç…ì«Ç›çûÇﬁÇ≈");
         try
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(SceneName);
@@ -71,6 +74,7 @@ public class ButtonManager : MonoBehaviour
         _image = instance.GetComponent<Image>();
         for (float i = 0; i <= second; i += Time.deltaTime)
         {
+            _audioSource.volume = 1 - (i / second);
             _image.color = new Color(0, 0, 0, i);
             await UniTask.Yield();
         }
