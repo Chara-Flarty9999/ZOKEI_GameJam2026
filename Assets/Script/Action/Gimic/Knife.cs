@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 /// <summary>
@@ -11,7 +12,7 @@ using UnityEngine;
 /// </summary>
 public class Knife : MonoBehaviour
 {
-
+    CancellationTokenSource _cts;
     [SerializeField] SpriteRenderer _sprite;
     Vector2 _movement;
     [SerializeField] Rigidbody2D _rb2d;
@@ -55,25 +56,18 @@ public class Knife : MonoBehaviour
         //スポーン時の情報を取得する
         _audioSource = GetComponent<AudioSource>();
         _sprite = GetComponent<SpriteRenderer>();
-        GameObject spawner = GameObject.Find("SpawnArea");
-        KnifeSpawn knife = spawner.GetComponent<KnifeSpawn>();
+        //GameObject spawner = GameObject.Find("SpawnArea");
+        //KnifeSpawn knife = spawner.GetComponent<KnifeSpawn>();
         _rb2d = this.GetComponent<Rigidbody2D>();
 
-        _rote = knife.rote;
-        _magnification = knife.magnification;
+        //_rote = knife.Rote;
+        //_magnification = knife.Magnification;
         transform.rotation = Quaternion.Euler(0, 0, _rote);
-
         await Transparent();
-
-        if (m_play == true)
-        {
-            _sprite.material.color -= new Color32(0, 0, 0, 255);
-            _rb2d.rotation -= 180;
-        }
 
 
         Destroy(gameObject, 3);
-        //Invoke("Destroy");
+
     }
 
     async UniTask Transparent()　//ここで召喚の挙動。ベクトルも取得している。
@@ -83,12 +77,12 @@ public class Knife : MonoBehaviour
             //_audioSource.PlayOneShot(spawn);
             for (int i = 0; i < 30; i++)
             {
-                _sprite.material.color = _sprite.material.color + new Color32(0, 0, 0, 9);
+                _sprite.color = _sprite.color + new Color(0, 0, 0, 0.03f);
                 _rb2d.rotation += 6;
-                await Awaitable.WaitForSecondsAsync(0.01f);
+                await UniTask.WaitForSeconds(0.01f);
 
             }
-            await Awaitable.WaitForSecondsAsync(0.1f);
+            await UniTask.WaitForSeconds(0.1f);
         }
 
         _rotation = transform.localEulerAngles.z;
@@ -103,25 +97,15 @@ public class Knife : MonoBehaviour
 
         for (int i = 0; i < 50; i++)
         {
+            if (gameObject == null) break;
             _rb2d.AddForce(_movement * new Vector2(_magnification, _magnification)); //ForceMode2D.Impulse
-            await Awaitable.WaitForSecondsAsync(0.01f);
+            await UniTask.WaitForSeconds(0.01f);
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void Initialize(int rote, float magnificate)
     {
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-
-    }
-
-    public void Destroy()
-    {
-        
+        _rote = rote;
+        _magnification = magnificate;
     }
 }

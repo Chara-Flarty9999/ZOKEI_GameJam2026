@@ -116,6 +116,9 @@ public class Enums : MonoBehaviour
         /// è„â∫Ç…ìÆÇ≠ÅB
         /// </summary>
         Vertical,
-        
+        /// <summary>
+        /// ïsìÆÅB
+        /// </summary>
+        None,
     }
 }
