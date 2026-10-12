@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -70,7 +70,7 @@ public class EnemyMovement : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogWarning("ÇÒÇ‹Ç†Ç≈ÇµÇÂÇ§ÇÀ");
+            Debug.LogWarning("„Çì„Åæ„ÅÇ„Åß„Åó„Çá„ÅÜ„Å≠.");
         }
 
     }

@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+ï»¿using System.Threading.Tasks;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -44,15 +44,15 @@ public class MessageSequencer : MonoBehaviour
     [SerializeField] private Button _choiceButtonPrefab = default;
     [SerializeField] private float _choiceButtonSpacing = 60f;
 
-    // _messages ƒtƒB[ƒ‹ƒh‚©‚ç•\¦‚·‚éŒ»İ‚ÌƒƒbƒZ[ƒW‚ÌƒCƒ“ƒfƒbƒNƒXB
-    // ‰½‚àw‚µ‚Ä‚¢‚È‚¢ê‡‚Í -1 ‚Æ‚·‚éB
+    // _messages ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‹ã‚‰è¡¨ç¤ºã™ã‚‹ç¾åœ¨ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚
+    // ä½•ã‚‚æŒ‡ã—ã¦ã„ãªã„å ´åˆã¯ -1 ã¨ã™ã‚‹ã€‚
     private int _currentIndex = -1;
 
-    // ‘I‘ğˆ‘Ò‚¿ƒtƒ‰ƒO
+    // é¸æŠè‚¢å¾…ã¡ãƒ•ãƒ©ã‚°
     private bool _awaitingChoice = false;
     bool _notChange = true;
 
-    // choicesParent ‚ÌŠî€ƒAƒ“ƒJ[ƒ|ƒWƒVƒ‡ƒ“‚ğ•Û
+    // choicesParent ã®åŸºæº–ã‚¢ãƒ³ã‚«ãƒ¼ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’ä¿æŒ
     private Vector2 _choicesParentBaseAnchoredPos = Vector2.zero;
 
     async void Start()
@@ -60,7 +60,7 @@ public class MessageSequencer : MonoBehaviour
         _actor.Image.color = new Color(1f, 1f, 1f, 0f);
         _secondActor.Image.color = new Color(1f, 1f, 1f, 0f);
         _cts = new CancellationTokenSource();
-        // •Û‘¶‚µ‚Ä‚¨‚­iRectTransform ‚ª•K—vj
+        // ä¿å­˜ã—ã¦ãŠãï¼ˆRectTransform ãŒå¿…è¦ï¼‰
         if (_choicesParent != null)
         {
             var rt = _choicesParent as RectTransform;
@@ -74,7 +74,7 @@ public class MessageSequencer : MonoBehaviour
     {
         if (_currentIndex == -1) return;
 
-        // ‘I‘ğˆ•\¦’†‚ÍƒNƒŠƒbƒN‚Åi‚ß‚È‚¢iUI ƒ{ƒ^ƒ“‚Å‘I‘ğ‚³‚¹‚éj
+        // é¸æŠè‚¢è¡¨ç¤ºä¸­ã¯ã‚¯ãƒªãƒƒã‚¯ã§é€²ã‚ãªã„ï¼ˆUI ãƒœã‚¿ãƒ³ã§é¸æŠã•ã›ã‚‹ï¼‰
         if (_awaitingChoice) return;
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -84,7 +84,7 @@ public class MessageSequencer : MonoBehaviour
 
         if (!_printer.IsPrinting)
         {
-            // ‚à‚µŒ»İ‚ÌƒƒbƒZ[ƒW‚ª‘I‘ğˆƒ^ƒCƒv‚ÅA‚Ü‚¾‘I‘ğˆ‚ğo‚µ‚Ä‚¢‚È‚¯‚ê‚Îo‚·
+            // ã‚‚ã—ç¾åœ¨ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒé¸æŠè‚¢ã‚¿ã‚¤ãƒ—ã§ã€ã¾ã é¸æŠè‚¢ã‚’å‡ºã—ã¦ã„ãªã‘ã‚Œã°å‡ºã™
             if (_currentIndex >= 0 && _sequence != null && _currentIndex < _sequence.messages.Length)
             {
                 var current = _sequence.messages[_currentIndex];
@@ -94,13 +94,13 @@ public class MessageSequencer : MonoBehaviour
                 }
                 if (current.messageType == Enums.MessageType.SceneChange) 
                 {
-                    // ƒV[ƒ“‘JˆÚ‚Ìê‡‚ÍAƒV[ƒ“‘JˆÚˆ—‚ğŒÄ‚Ño‚·
+                    // ã‚·ãƒ¼ãƒ³é·ç§»ã®å ´åˆã¯ã€ã‚·ãƒ¼ãƒ³é·ç§»å‡¦ç†ã‚’å‘¼ã³å‡ºã™
                     if (!string.IsNullOrEmpty(current.sceneName)&&_notChange)
                     {
                         _notChange = false;
-                        // ƒV[ƒ“‘JˆÚˆ—‚ğŒÄ‚Ño‚·i—á: SceneManager.LoadScenej
+                        // ã‚·ãƒ¼ãƒ³é·ç§»å‡¦ç†ã‚’å‘¼ã³å‡ºã™ï¼ˆä¾‹: SceneManager.LoadSceneï¼‰
                         _buttonManager.SceneChange(current.sceneName);
-                        await UniTask.DelayFrame(50); // ­‚µ‘Ò‚Â‚±‚Æ‚ÅƒV[ƒ“‘JˆÚ‚ªn‚Ü‚é‘O‚Éˆ—‚ğI—¹‚³‚¹‚é
+                        await UniTask.DelayFrame(50); // å°‘ã—å¾…ã¤ã“ã¨ã§ã‚·ãƒ¼ãƒ³é·ç§»ãŒå§‹ã¾ã‚‹å‰ã«å‡¦ç†ã‚’çµ‚äº†ã•ã›ã‚‹
                     }
                     return;
                 }
@@ -117,8 +117,8 @@ public class MessageSequencer : MonoBehaviour
     }
 
     /// <summary>
-    /// Ÿ‚Ìƒy[ƒW‚Éi‚ŞB
-    /// Ÿ‚Ìƒy[ƒW‚ª‘¶İ‚µ‚È‚¢ê‡‚Í–³‹‚·‚éB
+    /// æ¬¡ã®ãƒšãƒ¼ã‚¸ã«é€²ã‚€ã€‚
+    /// æ¬¡ã®ãƒšãƒ¼ã‚¸ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯ç„¡è¦–ã™ã‚‹ã€‚
     /// </summary>
     //private void MoveNext()
     //{
@@ -153,21 +153,21 @@ public class MessageSequencer : MonoBehaviour
             if (current.characterImage != null) 
             {
                 _actor.Image.sprite = current.characterImage;
-                _actor.Image.color = new Color(1f, 1f, 1f, 1f); // •s“§–¾‚É‚·‚é
+                _actor.Image.color = new Color(1f, 1f, 1f, 1f); // ä¸é€æ˜ã«ã™ã‚‹
             }
             else
             {
-                _actor.Image.color = new Color(1f, 1f, 1f, 0f); // “§–¾‚É‚·‚é
+                _actor.Image.color = new Color(1f, 1f, 1f, 0f); // é€æ˜ã«ã™ã‚‹
                 _actor.Image.sprite = null;
             }
             if (current.secondCharacterImage != null)
             {
                 _secondActor.Image.sprite = current.secondCharacterImage;
-                _secondActor.Image.color = new Color(1f, 1f, 1f, 1f); // •s“§–¾‚É‚·‚é
+                _secondActor.Image.color = new Color(1f, 1f, 1f, 1f); // ä¸é€æ˜ã«ã™ã‚‹
             }
             else
             {
-                _secondActor.Image.color = new Color(1f, 1f, 1f, 0f); // “§–¾‚É‚·‚é
+                _secondActor.Image.color = new Color(1f, 1f, 1f, 0f); // é€æ˜ã«ã™ã‚‹
                 _secondActor.Image.sprite = null;
             }
             _printer.ShowMessage(current.text);
@@ -230,7 +230,7 @@ public class MessageSequencer : MonoBehaviour
                 if (txt != null) txt.text = choice.choiceText;
             }
 
-            // Position button under parent using spacing
+            // Position button under parent using spacing.
             var btnRt = go.GetComponent<RectTransform>();
             if (btnRt != null)
             {
@@ -256,14 +256,14 @@ public class MessageSequencer : MonoBehaviour
 
         if (choice.nextMessages != null)
         {
-            // •Ê‚ÌƒƒbƒZ[ƒWƒV[ƒPƒ“ƒX‚Ö‘JˆÚ
+            // åˆ¥ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã¸é·ç§»
             _sequence = choice.nextMessages;
             _currentIndex = -1;
             MoveNext();
         }
         else
         {
-            // nextMessages ‚ª–³‚¢ê‡‚Í’P‚ÉŸ‚Ö
+            // nextMessages ãŒç„¡ã„å ´åˆã¯å˜ã«æ¬¡ã¸
             MoveNext();
         }
     }

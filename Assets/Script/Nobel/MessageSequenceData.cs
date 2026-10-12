@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMessageSequence", menuName = "Novel/Message Sequence")]
 public class MessageSequenceData : ScriptableObject
@@ -6,43 +6,43 @@ public class MessageSequenceData : ScriptableObject
     public MessageData[] messages;
 }
 
-[System.Serializable] // © š‚±‚ê‚ªd—vI
+[System.Serializable] // â† â˜…ã“ã‚ŒãŒé‡è¦ï¼
 public class MessageData
 {
-    [Tooltip("ƒLƒƒƒvƒVƒ‡ƒ“")]
+    [Tooltip("ã‚­ãƒ£ãƒ—ã‚·ãƒ§ãƒ³")]
     public string caption;
 
-    // ƒƒbƒZ[ƒW‚ª’Êí‚ÌƒeƒLƒXƒg‚©‘I‘ğˆ‚©‚ğ‘I‚×‚é‚æ‚¤‚É‚·‚é
+    // ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒé€šå¸¸ã®ãƒ†ã‚­ã‚¹ãƒˆã‹é¸æŠè‚¢ã‹ã‚’é¸ã¹ã‚‹ã‚ˆã†ã«ã™ã‚‹
     public Enums.MessageType messageType = Enums.MessageType.Text;
 
-    [TextArea(2, 5)]  // © i‚¨D‚İjƒCƒ“ƒXƒyƒNƒ^‚Å•¡”s“ü—Í‚ğŒ©‚â‚·‚­
+    [TextArea(2, 5)]  // â† ï¼ˆãŠå¥½ã¿ï¼‰ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ã§è¤‡æ•°è¡Œå…¥åŠ›ã‚’è¦‹ã‚„ã™ã
     public string text;
 
-    [Tooltip("ˆê•bŠÔ‚Å‰½•¶š•\¦‚³‚¹‚é‚©‚Ìİ’è")]
+    [Tooltip("ä¸€ç§’é–“ã§ä½•æ–‡å­—è¡¨ç¤ºã•ã›ã‚‹ã‹ã®è¨­å®š")]
     public float speed;
 
-    [Tooltip("ƒLƒƒƒ‰ƒNƒ^[—§‚¿ŠG‰æ‘œ")]
+    [Tooltip("ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ç«‹ã¡çµµç”»åƒ")]
 
     public Sprite characterImage;
 
-    [Tooltip("‘æ“ñƒLƒƒƒ‰ƒNƒ^[—§‚¿ŠG‰æ‘œ")]
+    [Tooltip("ç¬¬äºŒã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ç«‹ã¡çµµç”»åƒ")]
     public Sprite secondCharacterImage;
 
-    [Tooltip("”wŒiB‚à‚µİ’è‚³‚ê‚Ä‚¢‚éê‡”wŒi‚ª•Ï‰»‚µ‚Ä‚©‚ç•¶Í‚ªˆ—‚³‚ê‚éB")]
+    [Tooltip("èƒŒæ™¯ã€‚ã‚‚ã—è¨­å®šã•ã‚Œã¦ã„ã‚‹å ´åˆèƒŒæ™¯ãŒå¤‰åŒ–ã—ã¦ã‹ã‚‰æ–‡ç« ãŒå‡¦ç†ã•ã‚Œã‚‹ã€‚")]
     public Sprite backgroundImage;
 
-    [Tooltip("‘I‘ğˆƒŠƒXƒgBMessageType ‚ª Choice ‚Ì‚Æ‚«g—p")]
+    [Tooltip("é¸æŠè‚¢ãƒªã‚¹ãƒˆã€‚MessageType ãŒ Choice ã®ã¨ãä½¿ç”¨")]
     public ChoiceData[] choices;
 
-    [Tooltip("ƒV[ƒ“‘I‘ğ‚ÉƒV[ƒ“–¼‚ğ“ü—Í")]
-    public string sceneName; // ƒV[ƒ“‘JˆÚ—p‚ÌƒtƒB[ƒ‹ƒh
+    [Tooltip("ã‚·ãƒ¼ãƒ³é¸æŠæ™‚ã«ã‚·ãƒ¼ãƒ³åã‚’å…¥åŠ›")]
+    public string sceneName; // ã‚·ãƒ¼ãƒ³é·ç§»ç”¨ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
 }
 
 [System.Serializable]
 public class ChoiceData
 {
-    [Tooltip("‘I‘ğˆ‚ÌƒeƒLƒXƒg")]
+    [Tooltip("é¸æŠè‚¢ã®ãƒ†ã‚­ã‚¹ãƒˆ")]
     public string choiceText;
-    [Tooltip("‘I‘ğˆ‚ğ‘I‚ñ‚¾‚Æ‚«‚É•\¦‚·‚éƒƒbƒZ[ƒW")]
+    [Tooltip("é¸æŠè‚¢ã‚’é¸ã‚“ã ã¨ãã«è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€‚")]
     public MessageSequenceData nextMessages;
 }

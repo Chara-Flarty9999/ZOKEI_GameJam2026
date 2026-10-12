@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +19,7 @@ public class ButtonManager : MonoBehaviour
         await FadeIn();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
         
@@ -46,7 +46,7 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log($"Changing scene to: {SceneName}");
         await FadeOut(1);
-        Debug.Log("ƒV[ƒ“‚ğÀÛ‚É“Ç‚İ‚Ş‚Å");
+        Debug.Log("ã‚·ãƒ¼ãƒ³ã‚’å®Ÿéš›ã«èª­ã¿è¾¼ã‚€ã§");
         try
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(SceneName);

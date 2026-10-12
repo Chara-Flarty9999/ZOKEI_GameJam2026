@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 
@@ -39,7 +39,7 @@ public class ClossBlaster : MonoBehaviour
         spriterenderer.color -= new Color(0f, 0f, 0f, 0f);
         spriterenderer.material.color = new Color(1f, 1f, 1f, 0f);
 
-        //‚±‚Ì‰º‚Ì6‚Â‚ğwave“™‚ÌƒXƒNƒŠƒvƒg‚Åİ’è‚µ‚Ä‚­‚¾‚³‚ê
+        //ã“ã®ä¸‹ã®6ã¤ã‚’waveç­‰ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§è¨­å®šã—ã¦ãã ã•ã‚Œ.
         _startInfo = spawndata.F_place;
         _moveInfo = spawndata.M_place;
         _blasterSize = spawndata.BlasterSize;
@@ -52,14 +52,14 @@ public class ClossBlaster : MonoBehaviour
     }
 
     /// <summary>
-    /// \šƒuƒ‰ƒXƒ^[‚ğì“®‚³‚¹‚éƒƒ\ƒbƒhB‰ŠúˆÊ’u‚âˆÚ“®‘¬“x‚È‚Ç‚Í–‘O‚É•Ï”‚ÉŠi”[‚µ‚Ä‚¨‚­‚æ‚¤‚ÉB
+    /// åå­—ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã‚’ä½œå‹•ã•ã›ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã€‚åˆæœŸä½ç½®ã‚„ç§»å‹•é€Ÿåº¦ãªã©ã¯äº‹å‰ã«å¤‰æ•°ã«æ ¼ç´ã—ã¦ãŠãã‚ˆã†ã«ã€‚
     /// </summary>
-    /// <param name="startInfo">¢Š«‚ÌXÀ•WAYÀ•WAŠp“x‚ğİ’è‚·‚éBŠp“x‚Í“x”–@‚ÅOKBÀ•W‚ÍVector‚Å‚àOKB</param>
-    /// <param name="moveInfo">ƒr[ƒ€”­ËŒã‚Éƒuƒ‰ƒXƒ^[–{‘Ì‚ªXAY‚É‘Î‚µ‚ÄA‚Ü‚½Šp“x‚ğˆê•b‚É‚Ç‚ê‚¾‚¯“®‚©‚·‚©‚ğİ’è‚·‚éB</param>
-    /// <param name="size">ƒuƒ‰ƒXƒ^[‚ÌƒTƒCƒY‚ğİ’è‚·‚éBŠî–{‚Í1‚ÅOKB</param>
-    /// <param name="waittime">ƒuƒ‰ƒXƒ^[¢Š«‚©‚ç”­Ë‚Ü‚Å‚Ì’x‰„ŠÔ‚ğİ’è‚·‚éB</param>
-    /// <param name="looplong">ƒr[ƒ€”­Ë‚Ìˆ—‚ğ‰½‰ñŒJ‚è•Ô‚·‚©A‚Â‚Ü‚è‰½•bŠÔƒr[ƒ€‚ğ”­Ë‚·‚é‚©İ’è‚·‚éB</param>
-    /// <param name="beamcolor">”’‚©Â‚©ƒIƒŒƒ“ƒW‚ğİ’è‚·‚éB</param>
+    /// <param name="startInfo">å¬å–šæ™‚ã®Xåº§æ¨™ã€Yåº§æ¨™ã€è§’åº¦ã‚’è¨­å®šã™ã‚‹ã€‚è§’åº¦ã¯åº¦æ•°æ³•ã§OKã€‚åº§æ¨™ã¯Vectorã§ã‚‚OKã€‚</param>
+    /// <param name="moveInfo">ãƒ“ãƒ¼ãƒ ç™ºå°„å¾Œã«ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼æœ¬ä½“ãŒXã€Yã«å¯¾ã—ã¦ã€ã¾ãŸè§’åº¦ã‚’ä¸€ç§’ã«ã©ã‚Œã ã‘å‹•ã‹ã™ã‹ã‚’è¨­å®šã™ã‚‹ã€‚</param>
+    /// <param name="size">ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®ã‚µã‚¤ã‚ºã‚’è¨­å®šã™ã‚‹ã€‚åŸºæœ¬ã¯1ã§OKã€‚</param>
+    /// <param name="waittime">ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼å¬å–šã‹ã‚‰ç™ºå°„ã¾ã§ã®é…å»¶æ™‚é–“ã‚’è¨­å®šã™ã‚‹ã€‚</param>
+    /// <param name="looplong">ãƒ“ãƒ¼ãƒ ç™ºå°„ã®å‡¦ç†ã‚’ä½•å›ç¹°ã‚Šè¿”ã™ã‹ã€ã¤ã¾ã‚Šä½•ç§’é–“ãƒ“ãƒ¼ãƒ ã‚’ç™ºå°„ã™ã‚‹ã‹è¨­å®šã™ã‚‹ã€‚</param>
+    /// <param name="beamcolor">ç™½ã‹é’ã‹ã‚ªãƒ¬ãƒ³ã‚¸ã‚’è¨­å®šã™ã‚‹ã€‚</param>
     public void ClossBlasterCharge(Enums.StartInfo startInfo, Enums.MoveInfo moveInfo, float size, int waittime, int looplong, Enums.BlasterColor beamcolor)
     {
         this.transform.localScale = new Vector3 (0,0);
@@ -69,7 +69,7 @@ public class ClossBlaster : MonoBehaviour
         this.spriterenderer.material.DOFade(1f, 1.0f);
         this.transform.DOScale(size, 0.5f);
 
-        Debug.Log("ˆ—‚µ‚½‚¼");
+        Debug.Log("å‡¦ç†ã—ãŸã");
 
         StartCoroutine(ClossBlasterFire(moveInfo, waittime, looplong, beamcolor));
     }
@@ -79,19 +79,19 @@ public class ClossBlaster : MonoBehaviour
         yield return new WaitForSeconds(wait);
         spriterenderer.sprite = whileBeam;
         audioSource.PlayOneShot(blasterbeam);
-        Debug.Log("ƒXƒvƒ‰ƒCƒg‚Ü‚Å‚Í•Ï‚¦‚Ü‚µ‚½");
-        //Instantiate‚ğ’Ç‰Á‚·‚é
+        Debug.Log("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¾ã§ã¯å¤‰ãˆã¾ã—ãŸ");
+        //Instantiateã‚’è¿½åŠ ã™ã‚‹
         var parent = this.transform;
         Instantiate(_BeamPrefab, Vector3.zero, Quaternion.identity, parent);
         yield return new WaitForSeconds(0.01f);
         for (int i = 0; i < (looplong + 2) * 10; i++) 
         {
-            Debug.Log("ˆ—’†");
+            Debug.Log("å‡¦ç†ä¸­");
             transform.position += moveinfo.vector3;
             transform.eulerAngles += new Vector3(0, 0, moveinfo.di);
             yield return new WaitForSeconds(0.01f);
         }
-        Debug.Log("ƒ‹[ƒv‚µ‚½‚æ");
+        Debug.Log("ãƒ«ãƒ¼ãƒ—ã—ãŸã‚ˆ");
         spriterenderer.sprite = endBeam;
 
         GameObject gameObject = transform.GetChild(0).gameObject;

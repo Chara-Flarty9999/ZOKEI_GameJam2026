@@ -70,7 +70,7 @@ public class Knife : MonoBehaviour
 
     }
 
-    async UniTask Transparent()　//ここで召喚の挙動。ベクトルも取得している。
+    async UniTask Transparent()　//ここで召喚の挙動。ベクトルも取得している
     {
         if (m_play == true)
         {

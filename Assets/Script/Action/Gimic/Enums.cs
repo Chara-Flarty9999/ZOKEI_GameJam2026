@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enums : MonoBehaviour
 {
     /// <summary>
-    /// ƒuƒ‰ƒXƒ^[‚ÌˆÚ“®î•ñ‚ğ“ü—Í‚·‚é
+    /// ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®ç§»å‹•æƒ…å ±ã‚’å…¥åŠ›ã™ã‚‹
     /// </summary>
     public struct MoveInfo
     {
@@ -30,7 +30,7 @@ public class Enums : MonoBehaviour
         }
     }
     /// <summary>
-    /// ƒuƒ‰ƒXƒ^[‚Ì‰ŠúˆÊ’u‚ğ“ü—Í‚·‚é
+    /// ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®åˆæœŸä½ç½®ã‚’å…¥åŠ›ã™ã‚‹
     /// </summary>
     public struct StartInfo
     {
@@ -65,19 +65,19 @@ public class Enums : MonoBehaviour
     public enum FlyDirection
     {
         /// <summary>
-        /// ã‚É“®‚­B
+        /// ä¸Šã«å‹•ãã€‚
         /// </summary>
         Up,
         /// <summary>
-        /// ‰º‚É“®‚­B
+        /// ä¸‹ã«å‹•ãã€‚
         /// </summary>
         Down,
         /// <summary>
-        /// ¶‚É“®‚­B
+        /// å·¦ã«å‹•ãã€‚
         /// </summary>
         Left,
         /// <summary>
-        /// ‰E‚É“®‚­B
+        /// å³ã«å‹•ãã€‚
         /// </summary>
         Right,
     }
@@ -85,23 +85,23 @@ public class Enums : MonoBehaviour
     public enum MessageType
     {
         /// <summary>
-        /// ‰½‚à•\¦‚µ‚È‚¢B
+        /// ä½•ã‚‚è¡¨ç¤ºã—ãªã„ã€‚
         /// </summary>
         None,
         /// <summary>
-        /// •¶š‚ğ•\¦‚·‚éB
+        /// æ–‡å­—ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
         /// </summary>
         Text,
         /// <summary>
-        /// ‰æ‘œ‚ğ•\¦‚·‚éB
+        /// ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹ã€‚
         /// </summary>
         Image,
         /// <summary>
-        /// ‘I‘ğˆ‚ğ•\¦‚·‚éB
+        /// é¸æŠè‚¢ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
         /// </summary>
         Choice,
         /// <summary>
-        /// ƒV[ƒ“‚ğØ‚è‘Ö‚¦‚éB
+        /// ã‚·ãƒ¼ãƒ³ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ã€‚
         /// </summary>
         SceneChange,
     }
@@ -109,15 +109,15 @@ public class Enums : MonoBehaviour
     public enum EnemyMovement
     {
         /// <summary>
-        /// ¶‰E‚É“®‚­B
+        /// å·¦å³ã«å‹•ãã€‚
         /// </summary>
         Horizontal,
         /// <summary>
-        /// ã‰º‚É“®‚­B
+        /// ä¸Šä¸‹ã«å‹•ãã€‚
         /// </summary>
         Vertical,
         /// <summary>
-        /// •s“®B
+        /// ä¸å‹•ã€‚
         /// </summary>
         None,
     }

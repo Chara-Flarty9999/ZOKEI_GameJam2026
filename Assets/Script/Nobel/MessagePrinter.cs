@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
 public class MessagePrinter : MonoBehaviour
@@ -20,14 +20,14 @@ public class MessagePrinter : MonoBehaviour
         }
     }
 
-    private float _elapsed = 0; // •¶š‚ğ•\¦‚µ‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
-    private float _interval; // •¶š–ˆ‚Ì‘Ò‚¿ŠÔ
+    private float _elapsed = 0; // æ–‡å­—ã‚’è¡¨ç¤ºã—ã¦ã‹ã‚‰ã®çµŒéæ™‚é–“
+    private float _interval; // æ–‡å­—æ¯ã®å¾…ã¡æ™‚é–“
 
     private bool _isPrinting = false;
     public bool IsPrinting => _isPrinting;
 
-    // _message ƒtƒB[ƒ‹ƒh‚©‚ç•\¦‚·‚éŒ»İ‚Ì•¶šƒCƒ“ƒfƒbƒNƒXB
-    // ‰½‚àw‚µ‚Ä‚¢‚È‚¢ê‡‚Í -1 ‚Æ‚·‚éB
+    // _message ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‹ã‚‰è¡¨ç¤ºã™ã‚‹ç¾åœ¨ã®æ–‡å­—ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚
+    // ä½•ã‚‚æŒ‡ã—ã¦ã„ãªã„å ´åˆã¯ -1 ã¨ã™ã‚‹ã€‚
     private int _currentIndex = -1;
 
     private void Start()
@@ -44,7 +44,7 @@ public class MessagePrinter : MonoBehaviour
         {
             _elapsed = 0;
 
-            // Ÿ‚É•\¦‚·‚éƒCƒ“ƒfƒbƒNƒX
+            // æ¬¡ã«è¡¨ç¤ºã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
             int nextIndex = _currentIndex + 1;
 
             // If next char starts a rich-text tag, append the whole tag at once.
@@ -61,16 +61,16 @@ public class MessagePrinter : MonoBehaviour
                 // If no closing '>' found treat '<' as normal char and fall through.
             }
 
-            // ’Êí‚Ì1•¶š’Ç‰Á
+            // é€šå¸¸ã®1æ–‡å­—è¿½åŠ 
             _currentIndex++;
             _textUi.text += _message[_currentIndex];
         }
     }
 
     /// <summary>
-    /// w’è‚ÌƒƒbƒZ[ƒW‚ğ•\¦‚·‚éB
+    /// æŒ‡å®šã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
     /// </summary>
-    /// <param name="message">ƒeƒLƒXƒg‚Æ‚µ‚Ä•\¦‚·‚éƒƒbƒZ[ƒWB</param>
+    /// <param name="message">ãƒ†ã‚­ã‚¹ãƒˆã¨ã—ã¦è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€‚</param>
     public void ShowMessage(string message)
     {
         _interval = 1.0F / _speed;

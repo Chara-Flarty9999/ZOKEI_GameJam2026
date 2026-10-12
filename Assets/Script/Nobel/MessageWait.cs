@@ -1,4 +1,4 @@
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +16,7 @@ public class MessageWait : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
         

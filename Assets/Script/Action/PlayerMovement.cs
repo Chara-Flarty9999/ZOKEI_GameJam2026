@@ -1,21 +1,21 @@
-using System.ComponentModel;
+ï»¿using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
 public class PlayerMovement : MonoBehaviour
 {
-    /// <summary>ˆÚ“®‘¬“x</summary>
+    /// <summary>ç§»å‹•é€Ÿåº¦</summary>
     [ReadOnly(true), SerializeField] float _moveSpeed = 8f;
-    /// <summary>ƒWƒƒƒ“ƒv‘¬“x</summary>
+    /// <summary>ã‚¸ãƒ£ãƒ³ãƒ—é€Ÿåº¦</summary>
     [SerializeField] float _jumpSpeed = 5f;
-    /// <summary>ƒWƒƒƒ“ƒv’†‚ÉƒWƒƒƒ“ƒvƒ{ƒ^ƒ“‚ğ—£‚µ‚½‚Ìã¸‘¬“xŒ¸Š—¦</summary>
+    /// <summary>ã‚¸ãƒ£ãƒ³ãƒ—ä¸­ã«ã‚¸ãƒ£ãƒ³ãƒ—ãƒœã‚¿ãƒ³ã‚’é›¢ã—ãŸæ™‚ã®ä¸Šæ˜‡é€Ÿåº¦æ¸›è¡°ç‡</summary>
     [SerializeField] float _gravityDrag = .2f;
-    /// <summary>ƒvƒŒƒCƒ„[w’è</summary>
+    /// <summary>ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æŒ‡å®š</summary>
     [SerializeField] GameObject _player;
     [SerializeField] Rigidbody2D _rb = default;
     [SerializeField] SpriteRenderer _sprite = default;
-    /// <summary>Ú’nƒtƒ‰ƒO</summary>
+    /// <summary>æ¥åœ°ãƒ•ãƒ©ã‚°</summary>
     [SerializeField] bool _isGrounded = false;
     Vector3 _initialPosition = default;
     AudioSource _audioSource;
@@ -29,15 +29,15 @@ public class PlayerMovement : MonoBehaviour
     InputAction _jumpAction;
 
     /// <summary>
-    /// [ŠO•”•ÏX—p]ƒWƒƒƒ“ƒv—Íã¸‚ÌƒŒ[ƒgB”{—¦‚Åİ’è‚·‚éB
+    /// [å¤–éƒ¨å¤‰æ›´ç”¨]ã‚¸ãƒ£ãƒ³ãƒ—åŠ›ä¸Šæ˜‡ã®ãƒ¬ãƒ¼ãƒˆã€‚å€ç‡ã§è¨­å®šã™ã‚‹ã€‚
     /// </summary>
     public static float highJumpRate = 1f;
     /// <summary>
-    /// [ŠO•”•ÏX—p]’á‘¬—‰º—p‚ÌƒŒ[ƒgBŠî–{“I‚É3‚©1‚ÅOKB
+    /// [å¤–éƒ¨å¤‰æ›´ç”¨]ä½é€Ÿè½ä¸‹ç”¨ã®ãƒ¬ãƒ¼ãƒˆã€‚åŸºæœ¬çš„ã«3ã‹1ã§OKã€‚
     /// </summary>
     public static float levitation = 3;
     /// <summary>
-    /// [ŠO•”•ÏX—p]ˆÚ“®‘¬“x‚ÌƒŒ[ƒgB”{—¦‚Åİ’èB
+    /// [å¤–éƒ¨å¤‰æ›´ç”¨]ç§»å‹•é€Ÿåº¦ã®ãƒ¬ãƒ¼ãƒˆã€‚å€ç‡ã§è¨­å®šã€‚
     /// </summary>
     public static float highSpeed = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _sprite.flipX = true;
         }
-        float velocity = _rb.linearVelocity.y;   // ‚±‚Ì•Ï” velocity ‚É‘¬“x‚ğŒvZ‚µ‚ÄAÅŒã‚É Rigidbody2D.velocity ‚É–ß‚·
+        float velocity = _rb.linearVelocity.y;   // ã“ã®å¤‰æ•° velocity ã«é€Ÿåº¦ã‚’è¨ˆç®—ã—ã¦ã€æœ€å¾Œã« Rigidbody2D.velocity ã«æˆ»ã™
 
         v = _jumpAction.ReadValue<float>();
         if (v > 0 && _isGrounded)
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (v <= 0 && velocity > 0)
         {
-            // ã¸’†‚ÉƒWƒƒƒ“ƒvƒ{ƒ^ƒ“‚ğ—£‚µ‚½‚çã¸‚ğŒ¸‘¬‚·‚é
+            // ä¸Šæ˜‡ä¸­ã«ã‚¸ãƒ£ãƒ³ãƒ—ãƒœã‚¿ãƒ³ã‚’é›¢ã—ãŸã‚‰ä¸Šæ˜‡ã‚’æ¸›é€Ÿã™ã‚‹.
             velocity *= _gravityDrag;
         }
 

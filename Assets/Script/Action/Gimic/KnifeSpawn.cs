@@ -1,14 +1,14 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-// ‘‚«•û‚Ì”õ–Y˜^
-// EƒiƒCƒt“™‚Ì”­Ë•¨‚ğ¶¬‚·‚éƒXƒNƒŠƒvƒgB
-// x,y‚Å”­ËÀ•W‚ğw’è‚µArote‚ÅŠp“x‚ğw’è‚·‚éBmovedirection‚Åis•ûŒü‚ğw’è‚·‚éB
-// Šp“x‚É‚©‚©‚í‚ç‚¸•ûŒü‚ğw’è‚Å‚«‚éƒiƒCƒt‚Ég—p‚·‚émovedirection‚Í0‚ªãA1‚ª‰ºA2‚ª¶A3‚ª‰EB
+// æ›¸ãæ–¹ã®å‚™å¿˜éŒ²
+// ãƒ»ãƒŠã‚¤ãƒ•ç­‰ã®ç™ºå°„ç‰©ã‚’ç”Ÿæˆã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€‚
+// x,yã§ç™ºå°„åº§æ¨™ã‚’æŒ‡å®šã—ã€roteã§è§’åº¦ã‚’æŒ‡å®šã™ã‚‹ã€‚movedirectionã§é€²è¡Œæ–¹å‘ã‚’æŒ‡å®šã™ã‚‹ã€‚
+// è§’åº¦ã«ã‹ã‹ã‚ã‚‰ãšæ–¹å‘ã‚’æŒ‡å®šã§ãã‚‹ãƒŠã‚¤ãƒ•ã«ä½¿ç”¨ã™ã‚‹movedirectionã¯0ãŒä¸Šã€1ãŒä¸‹ã€2ãŒå·¦ã€3ãŒå³ã€‚
 //
 //
 //
@@ -25,16 +25,16 @@ public class KnifeSpawn : MonoBehaviour
     float y;
     float x;
     
-    //ƒuƒ‰ƒXƒ^[ê—p‚Ìî•ñ
-    /// <summary>ƒuƒ‰ƒXƒ^[‚Ì‰ŠúˆÊ’u</summary>
+    //ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼å°‚ç”¨ã®æƒ…å ±
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®åˆæœŸä½ç½®</summary>
     Enums.StartInfo _f_place;
-    /// <summary>ƒuƒ‰ƒXƒ^[‚ÌˆÚ“®î•ñ</summary>
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®ç§»å‹•æƒ…å ±</summary>
     Enums.MoveInfo _m_place;
-    /// <summary>ƒuƒ‰ƒXƒ^[‚ÌƒTƒCƒY</summary>
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®ã‚µã‚¤ã‚º</summary>
     float _blasterSize;
-    /// <summary>ƒuƒ‰ƒXƒ^[”­Ë‚Ü‚Å‚Ì’x‰„ŠÔ</summary>
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ç™ºå°„ã¾ã§ã®é…å»¶æ™‚é–“</summary>
     int _beamWait;
-    /// <summary>ƒuƒ‰ƒXƒ^[‚Ì”­ËŠúŠÔ(ƒ‹[ƒv‰ñ”)</summary>
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®ç™ºå°„æœŸé–“(ãƒ«ãƒ¼ãƒ—å›æ•°)</summary>
     int beamTime;
     public Enums.StartInfo F_place => _f_place;
 
@@ -46,29 +46,29 @@ public class KnifeSpawn : MonoBehaviour
 
     public int BeamTime => beamTime;
 
-    /// <summary>ƒuƒ‰ƒXƒ^[‚ÌF‚Ìw’è</summary>
+    /// <summary>ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼ã®è‰²ã®æŒ‡å®š</summary>
     Enums.BlasterColor _blasterColor;
     public Enums.BlasterColor BlasterColor => _blasterColor;
 
 
     /// <summary>
-    /// ’¼i‚·‚éƒiƒCƒtB
+    /// ç›´é€²ã™ã‚‹ãƒŠã‚¤ãƒ•ã€‚
     /// </summary>
     [SerializeField] GameObject _knifePrefab = default;
     /// <summary>
-    /// is•ûŒü‚ªw’è‚Å‚«‚éƒiƒCƒtB(ã‰º¶‰E)
+    /// é€²è¡Œæ–¹å‘ãŒæŒ‡å®šã§ãã‚‹ãƒŠã‚¤ãƒ•ã€‚(ä¸Šä¸‹å·¦å³)
     /// </summary>
     [SerializeField] GameObject _dirKnifePrefab = default;
     /// <summary>
-    /// ày—ô’eB
+    /// ç‚¸è£‚å¼¾ã€‚
     /// </summary>
     [SerializeField] GameObject _bombPrefab = default;
     /// <summary>
-    /// ƒNƒƒXƒuƒ‰ƒXƒ^[
+    /// ã‚¯ãƒ­ã‚¹ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼
     /// </summary>
     [SerializeField] GameObject _clossBlasterPrefab = default;
     /// <summary>
-    /// ’Êíƒuƒ‰ƒXƒ^[
+    /// é€šå¸¸ãƒ–ãƒ©ã‚¹ã‚¿ãƒ¼
     /// </summary>
     [SerializeField] GameObject _normalBlasterPrefab = default;
 

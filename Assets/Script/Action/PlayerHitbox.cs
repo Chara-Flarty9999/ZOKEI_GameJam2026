@@ -1,4 +1,4 @@
-using TMPro;
+Ôªøusing TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -11,7 +11,7 @@ public class PlayerHitbox : MonoBehaviour
     public GameObject Player => _player;
     [SerializeField] Image _clearImg;
     public bool IsPlayerHit { get; private set; } = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created.
     void Start()
     {
         IsPlayerHit = false;
@@ -27,7 +27,7 @@ public class PlayerHitbox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.LogWarning("ìGÇ…ìñÇΩÇ¡ÇΩÇº");
+            Debug.LogWarning("Êïµ„Å´ÂΩì„Åü„Å£„Åü„Åû");
             _collider.enabled = false;
             buttonManager.BeforeGameOverSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
             InputSystem.actions.Disable();

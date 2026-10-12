@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 using Cysharp.Threading.Tasks;
@@ -38,7 +38,7 @@ public class NormalBlaster : MonoBehaviour
         m_anim = GetComponent<Animator>();
         spriterenderer.material.color = new Color(1f, 1f, 1f, 0f);
 
-        //‚±‚Ì‰º‚Ì6‚Â‚ğwave“™‚ÌƒXƒNƒŠƒvƒg‚Åİ’è‚µ‚Ä‚­‚¾‚³‚ê
+        //ã“ã®ä¸‹ã®6ã¤ã‚’waveç­‰ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§è¨­å®šã—ã¦ãã ã•ã‚Œ.
         _startInfo = spawndata.F_place;
         _moveInfo = spawndata.M_place;
         _blasterSize = spawndata.BlasterSize;

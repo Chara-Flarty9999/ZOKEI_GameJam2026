@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class ClossBlasterBeam : MonoBehaviour
@@ -49,7 +49,7 @@ public class ClossBlasterBeam : MonoBehaviour
         this.spriterenderer.material.DOFade(0f, 0.5f);
         Invoke("ToDestroy", 3f);
     }
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
         transform.localScale = new Vector3(_clossBlasterSizeRate, _clossBlasterSizeRate);
